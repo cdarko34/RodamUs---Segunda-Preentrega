@@ -7,15 +7,15 @@ class usuario {
   }
 }
 
-
-let correoUsuario;
-
-
-
-
-
-
 const usuarios = []; 
+
+
+const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };
+
+guardarLocal('listaUsuarios', JSON.stringify(usuarios));
+
+
+
 
 document.getElementById('formulario-registro').addEventListener('submit', agregarUsuario);
 
@@ -24,18 +24,16 @@ document.getElementById('formulario-registro').addEventListener('submit', agrega
 function agregarUsuario(e) {
   e.preventDefault();
 
-  const basesuarios = JSON.parse(localStorage.setItem(usuarios);)
-
   const username = document.getElementById('username').value;
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
   const promo = document.getElementById('promo').value;
 
-  const usuario = new usuario(username, email, password, promo);
+  const usuarioNuevo = new usuario(username, email, password, promo);
+  usuarios.push(usuarioNuevo);
 
-  usuarios.push(usuario);
-
-
+  console.log(usuarios);
+  
   e.target.reset();
   
 }
@@ -133,10 +131,10 @@ function mostrarPaquetes(paquetes) {
 mostrarPaquetes(paquetes);
 
 
-//Crea un div en el que se muestran las características de los paquetes junto con el botón seleccionar
-botonPagar.addEventListener('click', () => {
-  console.log(username.value);
-  console.log(email.value);
-  console.log(promo.value);
+// //Crea un div en el que se muestran las características de los paquetes junto con el botón seleccionar
+// botonPagar.addEventListener('click', () => {
+//   console.log(username.value);
+//   console.log(email.value);
+//   console.log(promo.value);
 
-})
+// })
