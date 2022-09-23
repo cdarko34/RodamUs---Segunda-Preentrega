@@ -1,11 +1,56 @@
-//Inputs del form
+class usuario {
+  constructor(username,email,password,prommo){
+    this. username = username;
+    this.email = email;
+    this.password = password;
+    this.promo = promo;
+  }
+}
+
+
+let correoUsuario;
+
+
+
+
+
+
+const usuarios = []; 
+
+document.getElementById('formulario-registro').addEventListener('submit', agregarUsuario);
+
+
+
+function agregarUsuario(e) {
+  e.preventDefault();
+
+  const basesuarios = JSON.parse(localStorage.setItem(usuarios);)
+
+  const username = document.getElementById('username').value;
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  const promo = document.getElementById('promo').value;
+
+  const usuario = new usuario(username, email, password, promo);
+
+  usuarios.push(usuario);
+
+
+  e.target.reset();
+  
+}
+
+
+// //Inputs del form
  
-const form = document.querySelector('#form');
-const username = document.querySelector('#username');
-const email = document.querySelector('#email');
-const password = document.querySelector('#password');
-const promo = document.querySelector('#promo');
-const botonPagar = document.querySelector('#botonPagar');
+// const form = document.querySelector('#form');
+// const username = document.querySelector('#username');
+// const email = document.querySelector('#email');
+// const password = document.querySelector('#password');
+// const promo = document.querySelector('#promo');
+// const botonPagar = document.querySelector('#botonPagar');
+
+
 
 
 
